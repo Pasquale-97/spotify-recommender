@@ -27,11 +27,9 @@ warnings.filterwarnings("ignore")
 
 spotify_df = pd.read_csv("/Users/pasqualeiuliano/Documents/AI/spotify/data/data.csv")
 
-SPOTIPY_CLIENT_ID = '4ebf36973acc457ead8acce221e93db7'
-SPOTIPY_CLIENT_SECRET = '015d03c8de45471f8be99469d3b064c9'
 
-sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id='4ebf36973acc457ead8acce221e93db7',
-                                                           client_secret='015d03c8de45471f8be99469d3b064c9'))
+sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=os.environ["SPOTIFY_CLIENT_ID"],
+                                                           client_secret=os.environ["SPOTIFY_CLIENT_SECRET"]))
 
 def find_song(name, artists):
     song_data = defaultdict()
