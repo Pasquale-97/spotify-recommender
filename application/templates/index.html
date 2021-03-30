@@ -3,16 +3,29 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" href="../static/css/index.css">
+  <title>Spotify Recommender System</title>
 </head>
+<form action="{{ url_for('main') }}" method="POST">
+  <fieldset>
+      <legend>Input values:</legend>
+      Song Name:
+      <input name="Enter Song" type="text" required>
+      <br>
+        <input type="submit">
+    </fieldset>
+</form>
 
-<div class="wrap">
-    <div class="search">
-       <input type="text" class="searchTerm" placeholder="Search">
-       <button type="submit" class="searchButton">
-         <img src="https://img.icons8.com/fluent-systems-filled/24/ffffff/search.png"/>
-      </button>
-    </div>
- </div>
+<br>
+<div class="result" align="center">
+    {% if result %}
+    	{% for variable, value in original_input.items() %}
+    		<b>{{ variable }}</b> : {{ value }}
+    	{% endfor %}
+		<br>
+    	<br> Predicted number of bikes in use:
+   		<p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
+
 
 </html>
