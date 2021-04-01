@@ -31,7 +31,7 @@ spotify_df = pd.read_csv("/Users/pasqualeiuliano/Documents/AI/spotify/data/data.
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id=os.environ["SPOTIFY_CLIENT_ID"],
                                                            client_secret=os.environ["SPOTIFY_CLIENT_SECRET"]))
 
-def find_song(name, artists):
+def find_song(name):
     song_data = defaultdict()
     results = sp.search(q= 'track: {} artists: {}'.format(name, artists), limit=1)
     
@@ -61,11 +61,11 @@ number_cols = ['valence', 'year', 'acousticness', 'danceability', 'duration_ms',
 def get_song_data(song, spotify_data):
     
     try:
-        song_data = spotify_data[(spotify_data['name'] == song['name']) & (spotify_data['year'] == song['year'])].iloc[0]
+        song_data = spotify_data[(spotify_data['name'] == song['name'])].iloc[0]
         return song_data
     
     except IndexError:
-        return find_song(song['name'], song['year'])
+        return find_song(song['name'])
         
 
 def get_mean_vector(song_list, spotify_data):
@@ -119,7 +119,7 @@ def recommend_songs( song_list, spotify_data, n_songs=100):
     return rec_songs[metadata_cols].to_dict(orient='records')
 
 
-x = 'Cupid\'s Chokehold / Breakfast in America - Radio Mix'
-recommend_songs([
-                {'name': x, 'year': 2007}
-],  spotify_df)
+# x = 'Cupid\'s Chokehold / Breakfast in America - Radio Mix'
+# recommend_songs([
+#                 {'name': x, 'year': 2007}
+# ],  spotify_df)
