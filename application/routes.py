@@ -20,7 +20,8 @@ def main():
         if request.form['submit_button'] == 'Add Song':
             song = request.form['song']
             dictionary_song = {'name': song}
-            list_of_songs.append(dictionary_song)
+            if dictionary_song not in list_of_songs:
+                list_of_songs.append(dictionary_song)
 
             return render_template('index.html', result=list_of_songs)
 
@@ -30,15 +31,13 @@ def main():
             if not list_of_songs:
                 message = "Please enter at least one song."
                 return render_template('index.html', result=message)
-        
-            # input_variables = pd.DataFrame([song])
-            # x = 'Cupid\'s Chokehold / Breakfast in America - Radio Mix'
-            # [{'name': song}]
 
             prediction = recommend_songs(list_of_songs,  spotify_df)
+            order_prediction = sorted(prediction, key=lambda k: k['popularity'], reverse=True) 
         
             return render_template('index.html',
-                            result=prediction)
+                            songs_list=list_of_songs,
+                            result=order_prediction)
         
         if request.form['submit_button'] == 'Clear':
             list_of_songs.clear()
