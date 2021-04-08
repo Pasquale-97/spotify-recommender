@@ -26,7 +26,7 @@ def main():
             if dictionary_song not in list_of_songs:
                 list_of_songs.append(dictionary_song)
             
-            filter_songs = [re.sub(r"[\[\]\'\"]", "", d['name']) for d in list_of_songs]
+            filter_songs = [re.sub(r"[\[\]\'\"]", "", song['name']) for song in list_of_songs]
             
             return render_template('index.html', input_songs=filter_songs)
             
@@ -36,7 +36,7 @@ def main():
 
             if not list_of_songs:
                 message = "Please enter at least one song."
-                return render_template('index.html', result=message)
+                return render_template('index.html', songs_list=message)
 
             prediction = recommend_songs(list_of_songs, spotify_df)
             order_prediction = sorted(prediction, key=lambda k: k['popularity'], reverse=True) 
