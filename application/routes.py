@@ -5,6 +5,8 @@ from flask import jsonify
 from flask import render_template, redirect, url_for
 import pandas as pd
 import sys
+from flask_cors import CORS, cross_origin
+import re
 
 from model import recommend_songs
 
@@ -15,6 +17,7 @@ list_of_songs = []
 def main():
     if request.method == 'GET':
         return(render_template('index.html'))
+        
 
     if request.method == 'POST':
         if request.form['submit_button'] == 'Add Song':
@@ -22,8 +25,11 @@ def main():
             dictionary_song = {'name': song}
             if dictionary_song not in list_of_songs:
                 list_of_songs.append(dictionary_song)
-
-            return render_template('index.html', result=list_of_songs)
+            
+            filter_songs = [re.sub(r"[\[\]\'\"]", "", d['name']) for d in list_of_songs]
+            
+            return render_template('index.html', input_songs=filter_songs)
+            
 
         if request.form['submit_button'] == 'Create Playlist':
             song = request.form['song']
@@ -32,12 +38,17 @@ def main():
                 message = "Please enter at least one song."
                 return render_template('index.html', result=message)
 
-            prediction = recommend_songs(list_of_songs,  spotify_df)
+            prediction = recommend_songs(list_of_songs, spotify_df)
             order_prediction = sorted(prediction, key=lambda k: k['popularity'], reverse=True) 
-        
+
+            headings = ("Songs", "Artists", "Year", "Popularity")
+            
+            tuple_of_songs = [(d['name'], re.sub(r"[\[\]\'\"]", "", d['artists']),d['year'],d['popularity']) for d in order_prediction]
+
+            
             return render_template('index.html',
-                            songs_list=list_of_songs,
-                            result=order_prediction)
+                            headings = headings,
+                            result=tuple_of_songs)
         
         if request.form['submit_button'] == 'Clear':
             list_of_songs.clear()

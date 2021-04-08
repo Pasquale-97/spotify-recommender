@@ -1,31 +1,73 @@
-
-
 <!DOCTYPE html>
 
 <head>
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./static/css/index.css">
   <title>Spotify Recommender System</title>
 </head>
-<form action="{{ url_for('main') }}" method="POST">
+
+<div class="container">
+<div class="row justify-content-center mt-5">
+<form class="text-center border border-light p-5" action="{{ url_for('main') }}" method="POST">
   <fieldset>
-      <legend>Spotify Recommender System</legend>
-      Song Name:
+      <h1><mark class="green">Spotify</mark>Recommender System</h1>
+      <br>
+      <label>Enter Song:</label>
       <input name="song" type="text" required>
       <br><br>
-      <input type="submit" name="submit_button" value="Add Song">
+      <input type="submit" name="submit_button" value="Add Song" id="submit_button">
       <input type="submit" name="submit_button" value="Create Playlist" formnovalidate>
       <input type="submit" name="submit_button" value="Clear" formnovalidate>
   </fieldset>
 </form>
+</div>
+</div>
 
 <br>
-<div class="result" align="center">
-    {% if result %}
+
+<!-- <div class="input_songs" align="center">
+  {% if input_songs %}
       <br> 
       <b>Songs:</b>
-   		<p style="font-size:16px">{{ result }}</p>
+   		<li style="font-size:16px">{{ input_songs }}</li>
     {% endif %}
+</div> -->
+
+<div class="input_songs" align="center">
+  <table class="table">
+      <tr class="table_header">
+        {% if input_songs %}
+          <th class="table_cell">Songs</th>
+        {% endif %}
+      </tr>
+
+      {% for row in input_songs %} 
+      <tr class="table_row">
+          <td class="table_cell"> {{ row }} </td>
+      </tr>
+      {% endfor %}
+  </table>
 </div>
+
+
+<div class="result" align="center">
+<table class="table">
+    <tr class="table_header">
+      {% for header in headings %}
+      <th class="table_cell">{{ header }}</th>
+      {% endfor %}
+    </tr>
+
+    {% for row in result %} 
+    <tr class="table_row">
+      {% for cell in row %}
+        <td class="table_cell"> {{ cell }} </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
 
 <div class="songs_list" align="center">
   {% if songs_list %}
