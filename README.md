@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Spotify has been responsible for many new songs that enter my life on a weekly basis through their discover weekly playlists, as well as a whole host of others and this is all done through using AI. This is my attempt at using values of songs labelled from Spotify themselves and using these features to create recommendations on new songs. Creating my own way of discovering new songs. This is an end to end project, from analysing the data to creating a frontend, to deploying on Google Cloud. 
+Spotify has been responsible for many new songs that enter my life on a weekly basis through their discover weekly playlists and this is all done through using AI. This is my attempt at using values of songs labelled with a whole host of features (see below) from Spotify themselves and using these features to create recommendations on new songs. Creating my own way of discovering new songs. This is an end to end project, from analysing the data to creating a frontend, to deploying on Google Cloud. I hope you enjoy! 
 
 ## Data Gathering
 
