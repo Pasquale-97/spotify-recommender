@@ -11,7 +11,7 @@ Spotify has been responsible for many new songs that enter my life on a weekly b
 
 ## Data Gathering
 
-The data used consists of audio features of ~600K+ songs from [Kaggle]([https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks/code?datasetId=670134&sortBy=voteCount](https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks/code?datasetId=670134&sortBy=voteCount) downloaded using the Spotify API, covering a range of different genres of music. Although this doesn't contain all of the songs on Spotify, it provides a good starting point to see whether the recommendation system created is functioning as expected.
+The data used consists of audio features of ~600K+ songs from [Kaggle](https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks/code?datasetId=670134&sortBy=voteCount](https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks/code?datasetId=670134&sortBy=voteCount) downloaded using the Spotify API, covering a range of different genres of music. Although this doesn't contain all of the songs on Spotify, it provides a good starting point to see whether the recommendation system created is functioning as expected.
 
 ### About the data
 
