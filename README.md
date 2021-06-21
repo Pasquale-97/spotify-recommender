@@ -50,23 +50,27 @@ A visual representation of the change in features over time. Key points that can
 
 ***Pearson Correlation***
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1f277b0e-497a-480b-b4dc-6a93a8a59bba/pearson.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1f277b0e-497a-480b-b4dc-6a93a8a59bba/pearson.png)
+![pearson](https://user-images.githubusercontent.com/66837999/122840537-351ddc00-d2f2-11eb-9957-3f470dba49ad.png)
+
 
 ***Top 20 Most Popular Genres***
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e9eb49a-b0db-4eb1-bc99-f1e1ad505b3f/top_genres.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3e9eb49a-b0db-4eb1-bc99-f1e1ad505b3f/top_genres.png)
+![top_genres](https://user-images.githubusercontent.com/66837999/122840550-3cdd8080-d2f2-11eb-88ab-34af958642ae.png)
+
 
 An Overview of the most popular genres in the dataset.
 
 ***Top 20 Most Popular Artists***
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/87b02137-b7b1-49b7-8c32-74598da10a97/top_artists.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/87b02137-b7b1-49b7-8c32-74598da10a97/top_artists.png)
+![top_artists](https://user-images.githubusercontent.com/66837999/122840555-41a23480-d2f2-11eb-99c5-c1b8389e1a58.png)
+
 
 An Overview of the most popular artists in the dataset.
 
 ***Top 20 Most Popular Songs***
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/86fd29bb-0ecb-4b17-b4e1-84fa4af1ba3a/top_songs.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/86fd29bb-0ecb-4b17-b4e1-84fa4af1ba3a/top_songs.png)
+![top_songs](https://user-images.githubusercontent.com/66837999/122840562-4666e880-d2f2-11eb-9ad4-6e064b97b6d9.png)
+
 
 An Overview of the most popular songs in the dataset.
 
@@ -131,7 +135,8 @@ spotify_df['cluster_label'] = cluster_labels
 
 The result shows how the data was clustered and as you can see there are some clear distinctions between the clusters available
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/957bcf6c-5e0d-4c8c-8f6d-8581b1543f3d/spotify-cluster.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/957bcf6c-5e0d-4c8c-8f6d-8581b1543f3d/spotify-cluster.png)
+![spotify-cluster](https://user-images.githubusercontent.com/66837999/122840684-89c15700-d2f2-11eb-97b7-0f64d1ae8b2e.png)
+
 
 ### Eucidelean Distance
 
