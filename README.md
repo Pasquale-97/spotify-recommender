@@ -39,7 +39,8 @@ Spotify provides a host of information about the data that allows for us to anal
 
 ## Data Visualisation
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb593c46-a890-4b2c-b7c5-c662a7bfa83d/line_graph.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bb593c46-a890-4b2c-b7c5-c662a7bfa83d/line_graph.png)
+![line_graph](https://user-images.githubusercontent.com/66837999/122840493-1d465800-d2f2-11eb-8542-26f2f44da9ca.png)
+
 
 A visual representation of the change in features over time. Key points that can be seen in the data consists of:
 
